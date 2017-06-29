@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV Viewing Survey</title>
+</head>
+<body>
+  <h1><img src="http://static.tvtropes.org/pmwiki/pub/images/cbs1.png" alt="CBS eye" height="100" width="100"></h1>
+    <form method="post" action="success.html">
+      <fieldset>
+        <legend><strong>TV Viewing Survey</strong></legend>  
+          <div>
+            <label>What is your preferred way of watching television?</label>
+              <select name="Preference">
+                <option value="Netflix">Netflix</option>
+                <option value="Cable">Cable</option>
+                <option value="Satellite">Satellite</option>
+              </select>
+          </div>
+          <br>
+          <div>
+            <label>Name 5 of your favorite TV shows.</label>
+              <textarea cols="200" rows="4"></textarea>
+          </div>
+          <div>
+            <label>Birthdate</label>
+              <input type="date" name="Birthdate">
+          </div>
+          <div>
+            <label>E-mail address</label>
+              <input type="email" name="E-mail address">
+          </div>
+          <div>
+            <label>Telephone number</label>
+              <input type="tel" name="Telephone number">
+          </div>
+      </fieldset>
+        <button type="submit" name="Submit">Submit</button>
+    </form>
+</body>
+</html>
