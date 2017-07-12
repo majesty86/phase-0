@@ -1,0 +1,19 @@
+div.octo :nth-child(2) {
+  margin-top: 4cm;
+  margin-left: 5cm;
+  z-index: -1;
+}
+
+div.octo :first-child {
+  position:relative;
+  left: 370px;
+  bottom: 131px;
+}
+
+div.octo :last-child {
+  position:relative;
+  right: 180px;
+  bottom: 245px;
+  width: 15%;
+  height: 15%;
+}
