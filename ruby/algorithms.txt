@@ -1,0 +1,50 @@
+*Elevator Algorithm for my Robot*
+
+If you need to go to another floor of this building:
+    Scan premises until you find a blinking arrow light.
+    Navigate over to blinking arrow light.
+    If you have to go up:
+        Press the up arrow.
+    If you have to go down:
+        Press the down arrow.
+    Wait for doors to open.
+    Enter elevator, then wait for doors to close.
+    Scan elevator area for numbered buttons.
+        If there is something wrong with the elevator, press the red button.
+    Find the number floor you want to go to.
+        If you are going down, press a number that's less than your current floor number.
+        If you are going up, press a number that's greater than your current floor number.
+    Wait for a "ding!" from the elevator.
+    When the doors open:
+        Exit the elevator onto your new floor.
+
+*Washing Laundry*
+
+When clothes have been worn all day, put them in the hamper.
+    If no clothes on after putting clothes in hamper, put more on.
+To wash laundry:
+    When the laundry basket is full:
+        Get quarters for the laundry machine.
+        Get detergent for your laundry.
+        Put the quarters in your pocket.
+        Put the detergent bottle or pac on top of the basket for easy carrying.
+        Pick up your basket.
+        Open the door to your hallway, walk through it, then close it.
+        Walk down the hallway to your back door.
+        Open the back door, walk through it, then close it.
+        Walk outside to the laundry room door, unlock it, open it, walk through it, then close it.
+        If machines are currently full:
+            Wait until someone else picks up their laundry
+            Or go back inside with your laundry basket and come back later.
+        If machines are not full:
+            Put detergent in machine.  Put clothes in machine.
+    Insert quarters into the machine.
+    Hit "start"
+    While waiting for cycle to start:   
+        Sit and wait, and talk to your weird neighbors if they come by.
+        Go back into your apartment and write Ruby while you wait.
+            Set a timer for 45 minutes so you don't forget.
+    When the laundry machine stops or your timer goes off:
+        Go back to the washing machine.
+        Take clean clothes out and put in dryer.
+
