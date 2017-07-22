@@ -67,9 +67,10 @@ while
   end
 
 # Conditional Statements
-# Put all conditional statements inside the unless loop - if the 
+# Put all conditional statements inside the TWO unless loops - if the 
 # program sees a name that would suit a vampire, it is automatically
-# assumed that the new employee is a vampire.
+# assumed that the new employee is a vampire.  If the employee has
+# a sunshine allergy, they are probably a vampire.
 
   d_vampire = false
 
@@ -77,28 +78,31 @@ while
     then d_vampire = true
   end 
 
-  unless d_vampire == true
-  unless allergy == true
-    if age == true && (garlic == true || health == true)
-      then puts "Probably not a vampire."
+  unless res_inc == true
+    unless d_vampire == true
+      unless allergy == true
+        if age == true && (garlic == true || health == true)
+          then puts "Probably not a vampire."
+        end
+
+        if age == false && (garlic == true || health == true)
+          then puts "Probably a vampire."
+        end
+
+        if age == false && garlic == false && health == false
+          then puts "Almost certainly a vampire."
+        end
+      end
+
+      if allergy == true
+        puts "Probably a vampire."
+      end
     end
 
-    if age == false && (garlic == true || health == true)
-      then puts "Probably a vampire."
+    if d_vampire == true
+      puts "Definitely a vampire."
     end
 
-    if age == false && garlic == false && health == false
-      then puts "Almost certainly a vampire."
-    end
-  end
-  end
-
-  if allergy == true
-    puts "Probably a vampire."
-  end
-
-  if d_vampire == true
-    puts "Definitely a vampire."
   end
 
   if res_inc == true
@@ -106,3 +110,6 @@ while
   end
 
 end
+
+puts "Actually, never mind!  What do these questions have to do with
+anything?  Let's all be friends."
