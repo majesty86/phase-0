@@ -54,12 +54,23 @@ while
     res_inc = true
   end
 
+  allergy = "" 
+    puts "Do you have any allergies?  Type done when finished."
+    until allergy == "done" || allergy == "sunshine"
+      puts "Name an allergy."
+      allergy = gets.chomp     
+    end 
+
+  if allergy == "sunshine"
+    allergy = true
+  else allergy = false
+  end
+
 # Conditional Statements
 # Put all conditional statements inside the unless loop - if the 
 # program sees a name that would suit a vampire, it is automatically
 # assumed that the new employee is a vampire.
 
-  c_vampire = false
   d_vampire = false
 
   if employee_name == false 
@@ -67,6 +78,7 @@ while
   end 
 
   unless d_vampire == true
+  unless allergy == true
     if age == true && (garlic == true || health == true)
       then puts "Probably not a vampire."
     end
@@ -78,6 +90,11 @@ while
     if age == false && garlic == false && health == false
       then puts "Almost certainly a vampire."
     end
+  end
+  end
+
+  if allergy == true
+    puts "Probably a vampire."
   end
 
   if d_vampire == true
