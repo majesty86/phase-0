@@ -51,3 +51,11 @@ p grades
 tv_res = {"Sony" => 4000, "Toshiba" =>1920, "Panasonic" => 800}
 puts tv_res.has_value?(4000)
 puts tv_res.has_key?("Sanyo")
+
+# For number four, some ideas:
+
+
+# delete_if?
+# drop_while
+
+
