@@ -48,6 +48,28 @@ puts lunches
 grades = [104, 3, 0, 98, 27].select { |grades| grades.even?}
 p grades
 
-tv_res = {"Sony" => 4000, "Toshiba" =>1920, "Panasonic" => 800}
-puts tv_res.has_value?(4000)
-puts tv_res.has_key?("Sanyo")
+# For number four, made it 'real-world' by giving numbers, but these numbers are based on a local
+# fast-food joint who used to be gladly known for its GIANT drinks!  However, with the obesity
+# epidemic and all, they've decided to drop the three biggest sizes.
+
+# Number 4 - Array
+
+drink_sizes = [16, 20, 32, 48, 96, 128]
+p drink_sizes.take_while{ |oz| oz < 48} 
+
+# Number 4 - Hash
+
+drink_sizes = {
+  Small: 16,
+  Medium: 20,
+  Large: 32,
+  XLarge: 48,
+  DoubleXLarge: 96,
+  Gallon: 128
+}
+
+p drink_sizes.keep_if{ |key, value| value < 48}
+
+
+
+
