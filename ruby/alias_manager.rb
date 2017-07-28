@@ -8,7 +8,17 @@
 # 2.  Changes all vowels to next vowel, and all consonants become next consonant.
 #     example: 'a' becomes 'e', 'u' becomes 'a', 'd' becomes 'f', and so on.
 
-puts "What is the spy's name?"
-original = gets.chomp
+# User enters name.
+# 
 
-p original.split.chars
+# puts "What is the spy's name?"
+# original = gets.chomp
+
+org1st = "Ace"
+orgspace = ' ' 
+org2nd = "Ventura"
+
+orgname = org1st + orgspace + org2nd
+
+
+p orgname
