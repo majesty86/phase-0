@@ -11,14 +11,12 @@
 # User enters name.
 # 
 
-# puts "What is the spy's name?"
-# original = gets.chomp
 
-org1st = "Ace"
-orgspace = ' ' 
-org2nd = "Ventura"
+puts "What is the spy's name?"
+orgname = gets.chomp
 
-orgname = org1st + orgspace + org2nd
+spyname = orgname.split.reverse.join(" ")
 
+puts spyname.tr("aeiouAEIOU", "eiouaEIOUA").tr("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ", "cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZ")
 
-p orgname
+# Run the loop, store it.  Then done!
