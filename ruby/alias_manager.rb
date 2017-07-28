@@ -19,4 +19,5 @@ spyname = orgname.split.reverse.join(" ")
 
 puts spyname.tr("aeiouAEIOU", "eiouaEIOUA").tr("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ", "cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZ")
 
+
 # Run the loop, store it.  Then done!
