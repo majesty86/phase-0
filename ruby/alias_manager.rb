@@ -9,15 +9,28 @@
 #     example: 'a' becomes 'e', 'u' becomes 'a', 'd' becomes 'f', and so on.
 
 # User enters name.
-# 
 
+spy_array = []
 
-puts "What is the spy's name?"
+loop do  
+puts "What is the spy's name?  Type 'quit' when done entering all names."
 orgname = gets.chomp
+  
+  break if orgname == 'quit'
 
-spyname = orgname.split.reverse.join(" ")
+swapname = orgname.split.reverse.join(" ")
 
-puts spyname.tr("aeiouAEIOU", "eiouaEIOUA").tr("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ", "cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZ")
+spyname = swapname.tr("aeiouAEIOU", "eiouaEIOUA").tr("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ", "cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZ")
+
+spy_array << spyname
+
+end
+
+puts "Presenting our new spies:"
+puts spy_array
+
+
+
 
 
 # Run the loop, store it.  Then done!
