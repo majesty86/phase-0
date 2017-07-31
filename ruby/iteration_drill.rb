@@ -13,7 +13,7 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 
-# p zombie_apocalypse_supplies.each.include?("boots")
+# The easy way: puts zombie_apocalypse_supplies.include?("boots")
 
 # zombie_apocalypse_supplies.each do |str|
 #   if str == "hatchet"
@@ -35,13 +35,63 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
 
+# puts "You are overencumbered.  Please reduce your item count to 5."
+# puts "Please select what items you would like to remove:"
+
 # zombie_apocalypse_supplies.each do |item|
-#   arr = zombie_apocalypse_supplies 
-#   if arr.length > 5
-#     arr.pop
-#     p arr
-#   end 
-# end 
+  
+#   break if zombie_apocalypse_supplies.length == 5
+  
+#   answer = gets.chomp
+#   if answer == "hatchet"
+#     puts "You have removed the hatchet from your pack.  You have now lost the ability to chop wood."
+#     zombie_apocalypse_supplies.delete("hatchet")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "rations"
+#     puts "You have removed the rations from your pack.  It is recommended you now keep the shotgun to hunt."
+#     zombie_apocalypse_supplies.delete("rations")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "water jug"
+#     puts "You have removed the water jug from your pack.  Hope you're not thirsty!"
+#     zombie_apocalypse_supplies.delete("water jug")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "binoculars"
+#     puts "You have removed the binoculars from your pack. Now you can't see the zombies coming!"
+#     zombie_apocalypse_supplies.delete("binoculars")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "shotgun"
+#     puts "You have removed the shotgun from your pack. Better hold onto a rock!"
+#     zombie_apocalypse_supplies.delete("shotgun")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "compass"
+#     puts "You have removed the compass from your pack. Remember: the sun sets in the west."
+#     zombie_apocalypse_supplies.delete("compass")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "CB radio"
+#     puts "You have removed the CB radio from your pack. I don't blame you - it probably would have broken anyway."
+#     zombie_apocalypse_supplies.delete("CB radio")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+
+#   elsif answer == "batteries"
+#     puts "You have removed the batteries from your pack.  Outta juice!"
+#     zombie_apocalypse_supplies.delete("batteries")
+#     puts "You now have #{zombie_apocalypse_supplies.length} items in your pack."
+
+#   end
+# end
 
 # ----
 
@@ -50,8 +100,15 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # and their supplies below. You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
+
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+
+# combined_supplies = []
+# combined_supplies = zombie_apocalypse_supplies + other_survivor_supplies
+# combined_supplies = combined_supplies.uniq
+# puts combined_supplies
+
 # ----
 
 # Hash Drills
@@ -68,10 +125,27 @@ extinct_animals = {
 
 # 1. Iterate through extinct_animals hash using #each, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
+
+# extinct_animals.each {|x, y| puts "#{x}-#{y}", "*"}
+
 # ----
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
+
+extinct_animals_before_2000
+
+# extinct_animals.each do |key, value|
+#   if value < 2000
+#     puts key
+#     puts value
+#   end
+# end
+
+# extinct_animals.keep_if {|key, value| value < 2000}
+
+# puts extinct_animals
+
 # ----
 
 # 3. Our calculations were completely off, turns out all of those animals went
