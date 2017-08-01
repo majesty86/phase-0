@@ -41,9 +41,19 @@ end
 
 def add_item (list, item, quantity)
   list[item] = quantity
-  p list
 end
 
-items = "carrots apples cereal pizza"
-grocery_list = create_list (items)
-add_item(grocery_list, "bananas", 1)
+# items = "carrots apples cereal pizza"
+# grocery_list = create_list (items)
+# add_item(grocery_list, "bananas", 1)
+
+def remove_item(list, item)
+  list.delete(item)
+end
+
+def update_item(list, key, newval)
+  list[key] = newval
+end
+
+def print_list(list, separator)
+  
