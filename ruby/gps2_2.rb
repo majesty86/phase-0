@@ -8,6 +8,11 @@
   # Call method I made to print list.
 # Output into a hash.  The key is the item; the value is the quantity of the item.
 
+  # REFERENCE
+  # items = "carrots apples cereal pizza"
+  # grocery_list = create_list (items)
+  # add_item(grocery_list, "bananas", 1)
+
 # Method to add an item to a list
 # input: Put hash, item name for key, and optional quantity for value.
 # steps: 
@@ -35,7 +40,6 @@ def create_list (items)
   items.each do |item|
     grocery_list[item] = 2
   end
-   # print_list(grocery_list, '*')
    return grocery_list
 end 
 
@@ -43,17 +47,64 @@ def add_item (list, item, quantity)
   list[item] = quantity
 end
 
-# items = "carrots apples cereal pizza"
-# grocery_list = create_list (items)
-# add_item(grocery_list, "bananas", 1)
-
-def remove_item(list, item)
+def remove_item (list, item)
   list.delete(item)
 end
 
-def update_item(list, key, newval)
+def update_item (list, key, newval)
   list[key] = newval
 end
 
-def print_list(list, separator)
-  
+def print_list (list)
+  puts " "
+  puts "Today's Grocery List"
+  puts "===================="
+  puts (list.map{|k, v| "#{k}: #{v}" }.sort)
+end
+
+# DRIVER CODE
+
+grocery_list = create_list("Lemonade Tomatoes Onions")
+
+add_item(grocery_list, "Ice Cream", 4)
+
+update_item(grocery_list, "Tomatoes", 3)
+
+update_item(grocery_list, "Onions", 1)
+
+remove_item(grocery_list, "Lemonade")
+
+update_item(grocery_list, "Ice Cream", 1)
+
+print_list(grocery_list)
+
+# REFLECTION
+
+# What did you learn about psuedocode from working on this challenge?
+  # From my guide, I learned that psuedocode goes a certain place in the Ruby document.
+  # Too much psuedocode between my other lines of code can make the page seem cluttered.
+  # I also learned that although the psuedocode is in plain English, it still has to relate
+  # to the code as much as possible without actually looking like code.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+  # It seems to me like arrays are more for order, and hashes are more for customization.
+  # When I just need a basic ordered list of something, I can use an array.  When I want
+  # to be a little more specific, I can use a hash.
+
+# What does a method return?
+  # A method returns an object.  What it returns is based on what method was called last.
+
+# What kind of things can you pass into methods as arguments?
+  #  Values (strings, integers, methods) and other methods.
+
+# How can you pass information between methods?
+  # You can call a method inside another method.  To do this, a method should first be called
+  # and given a variable, so the method scope accommodates calling it into other methods.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+  # Method parameters are a lot clearer to me now, and the fact that if you give a method
+  # parameters, you have to fulfill those parameters in method or it won't work.  What's 
+  # still a bit confusing to me is writing the actual methods.  The most confusing part
+  # of that is when variables start changing inside methods.  I tend to lose track of them
+  # then, and mix up them up with the parameters.  This GPS really helped though, and may
+  # be just what I needed to get back on track.
