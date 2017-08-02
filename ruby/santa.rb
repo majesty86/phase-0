@@ -93,9 +93,9 @@ def initialize(gender, ethnicity)
   end 
 end
 
-# santa = Santa.new("male", "black")
-# santa.speak
-# santa.eat_milk_and_cookies("peanut butter")
+santa = Santa.new("male", "black")
+santa.speak
+santa.eat_milk_and_cookies("peanut butter")
 
 santas = []
 genders = [
@@ -164,24 +164,24 @@ ethnicities = [
 
 # p santas
 
-# santa = Santa.new("female", "Korean")
-# santa.about
-# santa.get_mad_at("Comet")
-# santa.gender = "cis female"
-# santa.about
-# santa.celebrate_birthday
+santa = Santa.new("female", "Korean")
+santa.about
+santa.get_mad_at("Comet")
+santa.gender = "cis female"
+santa.about
+santa.celebrate_birthday
 
 puts " "
 puts "======================================================"
 puts " "
 
-# santa = Santa.new("male", "caucasian")
-# santa.about
-# santa.speak
-# santa.gender = "teenage boy"
-# santa.ethnicity = "Viking Indian"
-# santa.about
-# santa.celebrate_birthday
+santa = Santa.new("male", "caucasian")
+santa.about
+santa.speak
+santa.gender = "teenage boy"
+santa.ethnicity = "Viking Indian"
+santa.about
+santa.celebrate_birthday
 
 # PSUEDOCODE FOR "LOTS OF SANTAS" PROGRAM
 
