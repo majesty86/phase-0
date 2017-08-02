@@ -1,6 +1,9 @@
 # Practice code from attributes video (refer to if needed)
-
+  
 # class Reindeer
+#   attr_reader :location
+#   attr_accessor :name
+
 #   def initialize(name)
 #     @name = name
 #     @location = "the North Pole"
@@ -16,25 +19,13 @@
 #     @location = location
 #   end 
 
-#   def about
-#     puts "Name: #{@name}"
-#     puts "Location: #{@location}"
-#   end 
-#   # getter methods for attributes
-#   def name
-#     @name
-#   end
-
-#   def location
-#     @location
-#   end
-
-#   # setter methods
-#   def name=(new_name)
-#     @name = new_name
-#   end
-   
+  # def about
+  #   puts "Name: #{@name}"
+  #   puts "Location: #{@location}"
+  # end
 # end
+
+
 
 # reindeer = Reindeer.new("Dasher")
 # puts "#{reindeer.name} is in #{reindeer.location}."
@@ -63,6 +54,9 @@
 # Add driver code below the Santa class to test it out.
 
 class Santa
+  attr_reader :age
+  attr_accessor :gender, :ethnicity
+
 def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -89,20 +83,13 @@ def initialize(gender, ethnicity)
     reindeer = @reindeer_ranking
     reindeer.delete(reindeer_name)
     reindeer.insert(-1, reindeer_name)
-    puts "Santa is mad at you, #{reindeer_name}!  Get to the back of the line!  *#{reindeer_name} sighs and hesitates* Did I stutter?!?!?"
-  end 
+    puts "Santa is mad at you, #{reindeer_name}!  Get to the back of the line!"
+  end
 
-  def gender(new_gender) 
-    @gender = new_gender
-    p "This Santa now identifies as #{new_gender}."
-  end 
-
-  def current_age
-    puts "This Santa's age is #{@age} years old." 
-  end 
-
-  def ethnicity
-    p "This Santa's ethnicity is #{@ethnicity}."
+  def about
+    puts "Age: #{@age}"
+    puts "Gender: #{@gender}"
+    puts "Ethnicity: #{ethnicity}"
   end 
 end
 
@@ -121,10 +108,20 @@ ethnicities = ["black", "Latino", "Arab", "Indian", "Japanese", "Mystical Creatu
 # p santas
 
 santa = Santa.new("female", "Korean")
+santa.about
 santa.get_mad_at("Comet")
-santa.gender("cis female")
-santa.current_age
-santa.ethnicity
+santa.gender = "cis female"
+santa.about
 santa.celebrate_birthday
 
+puts " "
+puts "======================================================"
+puts " "
+
+santa = Santa.new("male", "caucasian")
+santa.about
+santa.speak
+santa.gender = "teenage boy"
+santa.ethnicity = "Viking Indian"
+santa.about
 
