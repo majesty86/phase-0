@@ -62,7 +62,7 @@ def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = rand(0..140)
   end
 
   def speak
@@ -98,8 +98,65 @@ end
 # santa.eat_milk_and_cookies("peanut butter")
 
 santas = []
-genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-ethnicities = ["black", "Latino", "Arab", "Indian", "Japanese", "Mystical Creature (Chupacabra)"]
+genders = [
+  "Bi-gendered",
+  "Cross-dresser",
+  "Drag King",
+  "Drag Queen",
+  "Femme Queen",
+  "Female-to-Male",
+  "Gender Bender",
+  "Male-to-Female",
+  "Non-Op",
+  "HIJRA",
+  "Pangender",
+  "Trans",
+  "Woman",
+  "Man",
+  "Butch",
+  "Two-Spirit",
+  "Agender",
+  "Third Sex",
+  "Gender Fluid",
+  "Non-Binary Transgender",
+  "Androgynous",
+  "Gender Gifted",
+  "Gender Blender",
+  "Femme",
+  "Person of Transgender Experience",
+  "Cis Man",
+  "Cis Woman",
+  "Neither",
+  "Genderqueer"
+]
+
+ethnicities = [
+  "Algerian",
+  "Belarusian",
+  "Chinese",
+  "Dane",
+  "Goth",
+  "Teuton",
+  "Viking",
+  "Nord",
+  "Elven",
+  "Dwarven",
+  "Orc",
+  "Khajiit",
+  "Argonian",
+  "Finnish",
+  "Norwegian",
+  "Euro-Canadian",
+  "Native Viking",
+  "Inuit",
+  "Trans-Siberian Orchestran",
+  "German",
+  "Prussian",
+  "Gambian",
+  "Afrikaaner",
+  "Togolese",
+  "Japanese-Chinese-Indian-Canadian-African-Russian-American"
+]
 
 # genders.length.times do |i|
 #   santas << Santa.new(genders[i], ethnicities[i])
@@ -107,21 +164,41 @@ ethnicities = ["black", "Latino", "Arab", "Indian", "Japanese", "Mystical Creatu
 
 # p santas
 
-santa = Santa.new("female", "Korean")
-santa.about
-santa.get_mad_at("Comet")
-santa.gender = "cis female"
-santa.about
-santa.celebrate_birthday
+# santa = Santa.new("female", "Korean")
+# santa.about
+# santa.get_mad_at("Comet")
+# santa.gender = "cis female"
+# santa.about
+# santa.celebrate_birthday
 
 puts " "
 puts "======================================================"
 puts " "
 
-santa = Santa.new("male", "caucasian")
-santa.about
-santa.speak
-santa.gender = "teenage boy"
-santa.ethnicity = "Viking Indian"
-santa.about
+# santa = Santa.new("male", "caucasian")
+# santa.about
+# santa.speak
+# santa.gender = "teenage boy"
+# santa.ethnicity = "Viking Indian"
+# santa.about
+# santa.celebrate_birthday
 
+# PSUEDOCODE FOR "LOTS OF SANTAS" PROGRAM
+
+# Update the 2 arrays for genders and for ethnicities.  Put 30 examples in each one.
+# To determine the gender and ethnicity for each Santa, find out how to randomly select something
+# from each array for each Santa.
+
+# Set Santa's age anywhere between 0 and 140.  I have a feeling I can use 0 .. 140 here, and not use
+# a data structure.  That's my hunch anyway.
+
+# When printing these Santas, print out the attributes using the instance methods.
+
+x = 250000
+while x > 0
+  x -= 1
+  santa = Santa.new(genders.sample, ethnicities.sample)  
+  puts santa.about
+  puts "=============================="
+  puts " "
+end
