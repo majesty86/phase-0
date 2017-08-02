@@ -20,7 +20,28 @@
 #     puts "Name: #{@name}"
 #     puts "Location: #{@location}"
 #   end 
+#   # getter methods for attributes
+#   def name
+#     @name
+#   end
+
+#   def location
+#     @location
+#   end
+
+#   # setter methods
+#   def name=(new_name)
+#     @name = new_name
+#   end
+   
 # end
+
+# reindeer = Reindeer.new("Dasher")
+# puts "#{reindeer.name} is in #{reindeer.location}."
+# reindeer.take_off(3000)
+# reindeer.land("Cape Town")
+# reindeer.name = "The Reindeer Formerly Known as Dasher"
+# puts "#{reindeer.name} is in #{reindeer.location}."
 
 
 # reindeer = Reindeer.new("Blitzen")
@@ -58,9 +79,52 @@ def initialize(gender, ethnicity)
     puts "That was a good #{cookie} cookie!"
   end
 
+  def celebrate_birthday
+    age = @age + 1
+    p "Happy birthday! The #{@gender} #{@ethnicity} Santa is now #{age} years old!"
+  end
+
+
+  def get_mad_at(reindeer_name)
+    reindeer = @reindeer_ranking
+    reindeer.delete(reindeer_name)
+    reindeer.insert(-1, reindeer_name)
+    puts "Santa is mad at you, #{reindeer_name}!  Get to the back of the line!  *#{reindeer_name} sighs and hesitates* Did I stutter?!?!?"
+  end 
+
+  def gender(new_gender) 
+    @gender = new_gender
+    p "This Santa now identifies as #{new_gender}."
+  end 
+
+  def current_age
+    puts "This Santa's age is #{@age} years old." 
+  end 
+
+  def ethnicity
+    p "This Santa's ethnicity is #{@ethnicity}."
+  end 
 end
 
-santa = Santa.new("male", "black")
-santa.speak
-santa.eat_milk_and_cookies("peanut butter")
+# santa = Santa.new("male", "black")
+# santa.speak
+# santa.eat_milk_and_cookies("peanut butter")
+
+santas = []
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "Arab", "Indian", "Japanese", "Mystical Creature (Chupacabra)"]
+
+# genders.length.times do |i|
+#   santas << Santa.new(genders[i], ethnicities[i])
+# end 
+
+# p santas
+
+santa = Santa.new("female", "Korean")
+santa.get_mad_at("Comet")
+santa.gender("cis female")
+santa.current_age
+santa.ethnicity
+santa.celebrate_birthday
+
 
