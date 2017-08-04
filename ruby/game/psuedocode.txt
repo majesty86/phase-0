@@ -1,0 +1,18 @@
+Class for word-guessing game:
+
+Side-note: 
+Driver code is what "user" uses to play the game.
+The class described below is what the "computer" uses to determine the game's specifications, rules and results.
+
+Create a class called "game" or the title of your game.
+
+Class allows:
+    1 user to enter word or phrase (writer), and another user(guesser) attempts to guess the word.
+
+    Limiting of guesses by guesser, which is directly related to the word length.
+
+    In this class, repeated guesses won't count against the guesser.
+
+    Guesser will receive continual feedback on the word's current state.  If a correct letter is guessed, they will see their letter and the remaining spaces.
+
+    Guesser receives congratulatory message if they win, and a taunting one if they lose.
