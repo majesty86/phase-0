@@ -138,3 +138,22 @@ end
 
 #=======================================================================
 # Reflection Section
+
+  # What are the differences between the two different hash syntaxes shown in the 'state_data' file?
+    # Using the hash rocket syntax allows the string as a name, whereas the colon syntax is more for
+    # just naming a key instead of calling it in the program.
+
+  # What does require_relative do?  How is it different from require?
+    # Require_relative allows Ruby files to be accessed in other Ruby files in the same directory.
+    # If just using 'require', the entire file path would have to be called every time.  Require_relative
+    # makes for shorter, cleaner-looking code.
+
+  # What are some ways to iterate through a hash?
+    # Built-in methods or .each for blocks.
+
+  # When refactoring 'virus_effects', what stood out to you about the variables, if anything?
+    # They were declared more than they needed to be.  The variables required in the parameters were already
+    # declared when the instance was made, so we were able to get rid of the method parameters.
+
+  # What concept did you solidify most in this challenge?
+    # Using if/else statements compared to case statements, and the different types of scope.
