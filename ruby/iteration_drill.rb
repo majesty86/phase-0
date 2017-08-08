@@ -133,7 +133,7 @@ extinct_animals = {
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 
-extinct_animals_before_2000
+# extinct_animals_before_2000
 
 # extinct_animals.each do |key, value|
 #   if value < 2000
@@ -151,6 +151,13 @@ extinct_animals_before_2000
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
+
+# extinct_animals.each do |key, value|
+#   extinct_animals[key] = value - 3
+# end
+
+# p extinct_animals
+
 # ----
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
@@ -161,10 +168,32 @@ extinct_animals_before_2000
 # "Dodo"
 # "Saiga Antelope"
 # Driver code example: is_extinct?(extinct_animals, "Andean Cat")
+
+# def check_extinct(hash, animal)
+#     if hash[animal]
+#       puts true
+#     else 
+#       puts false
+#     end 
+# end 
+
+# check_extinct(extinct_animals, "Andean Cat")
+# check_extinct(extinct_animals, "Dodo")
+# check_extinct(extinct_animals, "Saiga Antelope")
+
+  # For this one, iterating through with .each returned a value for every single key, basically 
+  # asking the question "Is (animal) here?" to every other animal in the hash.  By getting rid
+  # of .each here, I was able to return a single value.  I don't think .each is even needed.
+
+
 # ----
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find a Ruby Hash built-in method that helps you accomplish this or build
 # your own method using #each
+
+
+p extinct_animals.shift
+
 # ----
