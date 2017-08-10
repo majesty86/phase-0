@@ -1,18 +1,18 @@
-// var colors = ["blue", "green", "purple", "red"];
+var colors = ["blue", "green", "purple", "red"];
 
-// var horse_names = ["Mr. Ed", "Drogon", "Rhaegal", "Viserion"];
+var horse_names = ["Mr. Ed", "Drogon", "Rhaegal", "Viserion"];
 
-// colors.push("white");
+colors.push("white");
 
-// horse_names.push("BoJack");
+horse_names.push("BoJack");
 
-// var colored_horses = {}
+var colored_horses = {}
 
-// horse_names.forEach(function(value, index) {
-//   colored_horses[value] = colors[index];
-// });
+horse_names.forEach(function(value, index) {
+  colored_horses[value] = colors[index];
+});
 
-// console.log(colored_horses);
+console.log(colored_horses);
 
 function Car(make, year, new_car) {
   console.log("Our new car:", this);
@@ -41,9 +41,3 @@ console.log(second_car);
 console.log("Our car sounds classically noice")
 second_car.rmrm();
 console.log("----------------");
-
-
-
-
-
-
