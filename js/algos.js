@@ -34,12 +34,27 @@ function longest_phrase(array) {
   }
 
 function find_match(obj1, obj2) {
-    
-}
+    for(key in obj1) {
+      pair1 = (key + " " + obj1[key]) 
+    }
+    for(key in obj2) {
+      pair2 = (key + " " + obj2[key])
+    }
+        if (pair1 == pair2)
+          console.log(true);
+        else 
+          console.log(false);
+  }
+
+
 
 
 // longest_phrase(phrase_array);
 // longest_phrase(phrase_array2);
 
-find_match(violin, ukulele);
+find_match(ukulele, violin);
+find_match(ukulele, guitar);
+find_match(violin, guitar);
+
+
 
