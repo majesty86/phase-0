@@ -4,8 +4,10 @@
 // This function will find the longest string in an array of strings (phrases).  
 
 // Create an array of phrases and assign to a variable.
-// Find the length of each phrase in the array.
-// Compare the phrase lengths in a function, and return the longest one.
+// Define single variable to work with (related to the array) inside the function.
+// Loop through the array, calling a length method on each element.
+// Write if statement to return string if it is the longest phrase, compared to other
+// elements in the array.
 
 // Release 1
 // Find a Key-Value Match
@@ -16,132 +18,89 @@
   // Write a function that states whether these objects have matching key-pair values.
   // Output from the function should be true or false.
 
-var phrase_array = ["call me as asap as possible", "thats what she said", "later guys"];
+// Release 2
+
+var phrase_array = ["later guys", "thats what she said", "call me as asap as possible"];
 var phrase_array2 = ["don't let your babies grow up to be cowboys", "fishing in the dark", "a boy named sue"];
 
 var guitar = {play_with: 'pick', strings: 6};
 var violin = {play_with: 'bow', strings: 4};
 var ukulele = {play_with: 'fingers', strings: 4};
 
-// Initially, I psuedocoded and created this myself, and it worked for release 0, but only took three strings.  
 
-// function longest_phrase(array) {
-//   if (array[0].length > (array[1].length && array[2].length)) {
-//         console.log(array[0]);
-//   } else if ((array[1].length) > (array[0].length) && (array[2].length)) {
-//         console.log(array[1]);
-//   } else if ((array[2].length) > (array[1].length) && (array[0].length)) {
-//         console.log(array[2])     
-//     }
-//   }
 
-// Refactored into this instead:
 
-function longest_phrase(array) {
-  var largest = 0;
-  var longeststring = " ";
+function longestPhrase(array) {
+  var longestString = array[0];
 
   for (var i = 0; i < array.length; i++) {
-    if (array[i].length > largest) {
-      largest = array[i].length;
-      longestword = array[i];
+    if (longestString.length < array[i].length) {
+      longestString = array[i];
     }
   }
-  console.log(longestword)
+  return longestString;
 }
+  
+// function findMatch(obj1, obj2) {
+//   for(key in obj1) {
+//     pair1 = (key + " " + obj1[key]) 
+//   }
+//   for(key in obj2) {
+//     pair2 = (key + " " + obj2[key])
+//   }
+//     if (pair1 == pair2)
+//       console.log(true);
+//     else 
+//       console.log(false);
+//   }
+
+// function randomTestData(int) {
+//   var words_array = [];
+//   var i = words_array.length;
+//     while (i < int) {
+//   var random_word = (Math.random().toString(36).slice(2, Math.floor(Math.random() * 10) + 1)); {
+//       words_array.push(random_word);
+//       i++;
+//     }
+//   }
+//       console.log(words_array);
+//       longestPhrase(words_array);
+// }
 
 
-function find_match(obj1, obj2) {
-  for(key in obj1) {
-    pair1 = (key + " " + obj1[key]) 
-  }
-  for(key in obj2) {
-    pair2 = (key + " " + obj2[key])
-  }
-    if (pair1 == pair2)
-      console.log(true);
-    else 
-      console.log(false);
-  }
-
-function random_test_data(int) {
-  var words_array = [];
-  var i = words_array.length;
-    while (i < int) {
-  var random_word = (Math.random().toString(36).slice(2, Math.floor(Math.random() * 10) + 1)); {
-      words_array.push(random_word);
-      i++;
-    }
-  }
-      console.log(words_array);
-      longest_phrase(words_array);
-}
 
 
-
-
-// longest_phrase(phrase_array);
-// longest_phrase(phrase_array2);
+console.log(longestPhrase(phrase_array));
+console.log(longestPhrase(phrase_array2));
 
 // find_match(ukulele, violin);
 // find_match(ukulele, guitar);
 // find_match(violin, guitar);
 
-console.log("~~~~~~~~~~")
-console.log("Test 1")
-console.log("~~~~~~~~~~")
-random_test_data(2);
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 2")
-console.log("~~~~~~~~~~")
-random_test_data(3);
+// Here, break down the changes from the review of your challenge - where to start,
+// and where to go from there.
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 3")
-console.log("~~~~~~~~~~")
-random_test_data(4);
+// 1. Take pseudocode seriously.  Break big problems into smaller, more manageable ones.
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 4")
-console.log("~~~~~~~~~~")
-random_test_data(5);
+// 2. Naming conventions - Ruby (snake_case) vs. JS (camelCase) - look it up!
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 5")
-console.log("~~~~~~~~~~")
-random_test_data(6);
+// 3. Console.log are NOT returns.  You didn't return anything with these.  
+// I'm not entirely understanding her feedback, but it seems like I can do both?
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 6")
-console.log("~~~~~~~~~~")
-random_test_data(7);
+// 4. Notes on Release 0: 
+  // Use fewer variables (thanks StackOverflow, ya jerks)
+  // Longeststring ISN'T declared because I used "longestword" instead.  Simplify!
+  // Use return, not console.log.
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 7")
-console.log("~~~~~~~~~~")
-random_test_data(8);
+// 5. Notes on Release 1: 
+  // Didn't declare variables, so do that.
+  // Use 'return' not console.log again
+  // Compare values/keys directly instead of defining strings or whatever you did
+  // Use her function!!  Yay!
 
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 8")
-console.log("~~~~~~~~~~")
-random_test_data(9);
-
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 9")
-console.log("~~~~~~~~~~")
-random_test_data(10);
-
-console.log(" ");
-console.log("~~~~~~~~~~")
-console.log("Test 10")
-console.log("~~~~~~~~~~")
-random_test_data(11);
+// 6. Notes on Release 2:
+  // Write psuedocode for it, you forgot.  Maybe this was after the wall.
+  // Again, undefined because no return, only console.log
+  // Try to rewrite only using letters (darn, thought I'd get away with that)
+  // AHHHH!!
