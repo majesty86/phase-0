@@ -1,0 +1,41 @@
+#SQL Queries for bands.db#
+
+*1. Display the information in one table (either table is fine).*
+
+SELECT * FROM musicians;
+
+*2. Update an item that meets some condition (you can choose a condition that makes sense.*
+
+UPDATE musicians SET name="Jay Weinberg" WHERE name="Joey Jordison";
+
+*3. Display the information in both tables using one query.*
+
+SELECT * FROM musicians, bands WHERE musicians.band_id = bands.id;
+
+*4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.*
+
+SELECT musicians.name, bands.name FROM musicians JOIN bands ON musicians.band_id = bands.id;
+
+*5. Delete an item that meets some condition (you can choose a condition that makes sense).*
+
+DELETE FROM musicians WHERE instrument="vocals";
+
+**Joins**
+
+*Inner Join*
+SELECT musicians.name, bands.year_formed
+FROM musicians
+INNER JOIN bands ON musicians.band_id=bands.id;
+
+*Left Join*
+SELECT musicians.name, bands.name
+FROM musicians
+LEFT JOIN bands ON musicians.id = bands.id
+ORDER BY musicians.name
+
+*Self Join*
+SELECT A.name AS musicianName1, B.name AS musicianName2, A.instrument
+FROM musicians A, musicians B
+WHERE A.id <> B.id
+AND A.instrument = B.instrument
+ORDER BY A.instrument;
