@@ -16,6 +16,8 @@
 
   // Create three objects with key-value pairs.  Two should have a matching key-value pair, and one shouldn't.
   // Write a function that states whether these objects have matching key-pair values.
+      // First, define each part of the object as variables - each key and each value.
+      // Once these variables are defined, you can 
   // Output from the function should be true or false.
 
 // Release 2
@@ -26,9 +28,6 @@ var phrase_array2 = ["don't let your babies grow up to be cowboys", "fishing in 
 var guitar = {play_with: 'pick', strings: 6};
 var violin = {play_with: 'bow', strings: 4};
 var ukulele = {play_with: 'fingers', strings: 4};
-
-
-
 
 function longestPhrase(array) {
   var longestString = array[0];
@@ -41,23 +40,54 @@ function longestPhrase(array) {
   return longestString;
 }
   
-// function findMatch(obj1, obj2) {
-//   for(key in obj1) {
-//     pair1 = (key + " " + obj1[key]) 
-//   }
-//   for(key in obj2) {
-//     pair2 = (key + " " + obj2[key])
-//   }
-//     if (pair1 == pair2)
-//       console.log(true);
-//     else 
-//       console.log(false);
-//   }
+function findMatch(objA, objB) {
+  for(var key in objA) {
+    if (objA[key] === objB[key]) {
+      return true
+    }
+  }
+  return false
+}
+
+// THIS WORKED!  BUT - it's prone to bugs, and it only accounts for 2 objects,
+// like your former Release 0 on this project.  Hours wasted, but you stayed with it.
+// 
+
+  // var i0A = 0;
+  // var key0A = Object.keys(objA)[i0A];
+  // var value0A = objA[key0A];
+  // var pair0A = key0A + " " + value0A;
+
+  // var i1A = 1;
+  // var key1A = Object.keys(objA)[i1A];
+  // var value1A = objA[key1A];
+  // var pair1A = key1A + " " + value1A;
+
+  // var i0B = 0;
+  // var key0B = Object.keys(objB)[i0B];
+  // var value0B = objB[key0B];
+  // var pair0B = key0B + " " + value0B;
+
+  // var i1B = 1;
+  // var key1B = Object.keys(objB)[i1B];
+  // var value1B = objB[key1B];
+  // var pair1B = key1B + " " + value1B;
+
+  //   if ((pair0A == pair0B) || (pair1A == pair1B)) {
+  //     return true 
+  //   } else {
+  //     return false
+  //   }
+
+
+// for (var key in obj1)
+
 
 // function randomTestData(int) {
 //   var words_array = [];
 //   var i = words_array.length;
-//     while (i < int) {
+//     while (i < int) 
+//     // in here, do random alphabet string {
 //   var random_word = (Math.random().toString(36).slice(2, Math.floor(Math.random() * 10) + 1)); {
 //       words_array.push(random_word);
 //       i++;
@@ -67,16 +97,22 @@ function longestPhrase(array) {
 //       longestPhrase(words_array);
 // }
 
+// create randomWord function that takes int parameter 
+// create var to represent alphabet
+// create var that is ""
+// iterate int number of times
+  // generate random number from 0 to 25
+  // pull letter at that index out of alphabet
+  // append to ""
+// return string that was once empty
 
 
 
-console.log(longestPhrase(phrase_array));
-console.log(longestPhrase(phrase_array2));
+// console.log(longestPhrase(phrase_array));
+// console.log(longestPhrase(phrase_array2));
 
-// find_match(ukulele, violin);
-// find_match(ukulele, guitar);
-// find_match(violin, guitar);
-
+console.log(findMatch(ukulele, guitar));
+console.log(findMatch(ukulele, violin));
 
 // Here, break down the changes from the review of your challenge - where to start,
 // and where to go from there.
