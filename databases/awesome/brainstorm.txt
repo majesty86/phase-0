@@ -1,0 +1,67 @@
+#Idea Brainstorm for Project#
+
+"Something that can make mine or someone else's life better."
+
+Think about what databases do.  They organize things into tables so people can read them, and know where things are and maybe what they represent or do.  So take information in your life, whether you use it or not, and try to organize it in a helpful way.  
+
+*idea 1*
+Rocket League improvement database program
+Column ideas for this one:
+-Training types
+-Training modules
+-Teammates
+-Toxic?
+-Positive?
+-Rank?
+A cars table
+
+*idea 2*
+Bookshelf organization database program, or "read your books!" "RYBS!"
+-This one is nice because there is a ton of data.  I can organize it in so many ways, or view it in so many ways.  Some ideas of columns for this one, just brainstorming.  Use multiple tables - one can be a survey of some kind - my own personal survey, and the other can have book information.
+    -Author
+    -Title
+    -Year published
+    -Year I got it
+    -Did I read it?
+    -Did it sound interesting to me?
+    -College class I used it for
+    -Number of pages
+    -Type of book
+    -Would it be useful to read it?
+
+Could also have a section on books I want to read, or ideas for new types of books, or whatever!
+
+*idea 3*
+THIS ONE could be used throughout my time at DBC possibly, really making my life easier.  A task list.  One that organizes everything I have to and also *should* do to make me a better programmer.
+
+This could also include travel schedules, since it's important.  I'd have to include my work schedule as well, because that's a part of this, too.  
+
+I could maybe build on this every day.  Maybe make it part of my routine...
+
+TABLE/COLUMN IDEAS:
+
+'train travel' table
+-Train times
+-Walking distances/est. times
+-Est. travel times on workdays
+
+'auto travel' table
+-Times, parking
+
+'motorcycle travel' table (pretend this could still be an option sometimes)
+-Times, parking, storage, what to bring
+
+'daily schedule' table
+By hour
+-A user(me) can use update this as much as I'd like
+-Today's tasks
+-Effort/difficulty level?  Try to formulate this one somehow - might be good to have a difficulty level, like in a quest or something
+-Complete?
+
+'relax' table or whatever - this basically will help me monitor my downtime so I control how much time I 'waste' that I could be spending on reading about coding or coding itself
+
+I'm liking brainstorm 3 - I want something not only that will keep helping me and not just be a one-and-done, but something I can build on!  Maybe this can be my big project?  The best organizational tool ever??!?!
+
+
+
+
