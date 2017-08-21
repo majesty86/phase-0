@@ -10,19 +10,8 @@ require 'ap'
 db = SQLite3::Database.new("quest.db")
 
 # Creating all tables here.  According to the brainstorm file, I need tables for:
-  # Travel
   # Daily schedule
   # Tasks
-
-create_table_travel = <<-SQL
-  CREATE TABLE IF NOT EXISTS travel(
-    id INTEGER PRIMARY KEY,
-    transport_method VARCHAR(255),
-    total_time TIME,
-    consistent BOOLEAN,
-    departure TIME
-  )
-SQL
 
 create_table_tasks = <<-SQL
   CREATE TABLE IF NOT EXISTS tasks(
@@ -41,20 +30,16 @@ create_table_schedule = <<-SQL
   )
 SQL
 
-db.execute(create_table_travel)
+
 db.execute(create_table_tasks)
 db.execute(create_table_schedule)
-
-def add_to_travel(db, transport, est_time, is_consistent, departure_time)
-  db.execute("INSERT INTO travel (transport_method, total_time, consistent, departure) VALUES (?, ?, ?, ?)", [transport, est_time, is_consistent, departure_time])
-end
 
 def add_to_tasks(db, task_str, difficulty_int)
   db.execute("INSERT INTO tasks (task, difficulty) VALUES (?, ?)", [task_str, difficulty_int])
 end
 
-def add_to_schedule(db, time_range)
-  db.execute("INSERT INTO schedule (hour) VALUES (?)", [time_range])
+def add_to_schedule(db, time_range, taskid)
+  db.execute("INSERT INTO schedule (hour, task_id) VALUES (?, ?)", [time_range, taskid])
 end
 
 def print_table(db, table_str)
@@ -62,21 +47,34 @@ def print_table(db, table_str)
   ap table_str
 end
 
-# add_to_travel(db, 'car', '45 min', 'false', '07:00')
+puts "#{db.execute("SELECT schedule_id FROM schedule WHERE schedule_id = (SELECT max(schedule_id) FROM schedule)")} task(s) entered so far today."
 
-until task = "done"
-  puts "What task did you want to complete today? Type 'done' when finished entering tasks."
-  unless task = "done"
+task = ""
+loop do 
+  puts "Type 'q' at any time to quit and view current task list."
+  puts "Enter task number."
+    task_number = gets.chomp.to_i
+      break if task_number == 0
+      puts
+  puts "What task did you want to complete today?"
     task = gets.chomp
-  end
-  puts "Schedule a time for this task."
-  time = gets.chomp
+      break if task == "q"
+      puts
+  puts "Schedule a start and end time for this task."
+    time = gets.chomp
+      break if time == "q"
+      puts
   puts "On a scale of 1 to 5, rate the difficulty of this task, 5 being the most difficult."
-  difficulty = gets.chomp
+    difficulty = gets.chomp
+      break if difficulty == "q"
+      puts
 
   add_to_tasks(db, task, difficulty)
-  add_to_schedule(db, time)
+  add_to_schedule(db, time, task_number)
+
+  puts "#{db.execute("SELECT schedule_id FROM schedule WHERE schedule_id = (SELECT max(schedule_id) FROM schedule)")} task(s) entered so far today.  Type 'q' at any time to quit."
 end
 
-task_list = db.execute("SELECT schedule.hour, tasks.task, tasks.difficulty FROM schedule JOIN tasks ON schedule.task_id = tasks.task_id")
+task_list = db.execute("SELECT schedule.hour, tasks.task FROM schedule JOIN tasks ON schedule.task_id = tasks.task_id")
 ap task_list
+
