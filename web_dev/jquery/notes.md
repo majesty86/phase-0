@@ -28,6 +28,8 @@ Alright, here we go!
 
 #How did I do?
 
+Surprisingly, the best learning tool I found for jQuery was an iPhone app, while I was browsing at work.  The HTML in it seemed a bit outdated, but it gave me a solid understanding of jQuery, and enough information to build a simple project out of it.  It had cheatsheets, too!
+
 
 
 
