@@ -30,7 +30,7 @@ post '/students' do
 end
 
 post '/contact' do
-  db.execute("UPDATE students SET ")
+  db.execute("UPDATE students SET #{[params['address']]}, #{[params['phone']]} WHERE name=#{[params['name']]}")
 end
 
 # add static resources
